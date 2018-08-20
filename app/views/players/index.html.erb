@@ -1,5 +1,22 @@
-<ol>
-  <% @players.each do |player| %>
-    <li><%= player.name %></li>
-  <% end %>
-</ul>
+<table class='highlight'>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Team</th>
+      <th>Position Rank</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.rank %>)</td>
+        <td><%= player.name %></td>
+        <td><%= player.position %></td>
+        <td><%= player.team %></td>
+        <td><%= player.position_rank %></td>
+    <% end %>
+  </tbody>
+</table>
