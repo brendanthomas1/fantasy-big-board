@@ -6,7 +6,7 @@ task import_players: :environment do
 
   players_table_rows.each do |p|
     td = p.css('td')
-    split_name = td.first.text.split('. ')
+    split_name = td.first.text.split(%r{\d\. })
 
     rank = split_name.first
     name = split_name.last
