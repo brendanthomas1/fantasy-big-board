@@ -1,0 +1,6 @@
+var content = '<%= j render partial: 'players/player', locals: { player: @player } %>';
+var nodeId = 'player-<%= @player.id %>-node';
+var node = document.getElementById(nodeId).cloneNode(true);
+node.innerHTML = content;
+node.classList.toggle('drafted')
+document.getElementById(nodeId).replaceWith(node);

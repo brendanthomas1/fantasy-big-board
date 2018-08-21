@@ -11,12 +11,7 @@
 
   <tbody>
     <% @players.each do |player| %>
-      <tr class="<%= player.drafted? ? 'drafted' : '' %>">
-        <td><%= player.rank %>)</td>
-        <td><%= player.name %></td>
-        <td><%= player.position %></td>
-        <td><%= player.team %></td>
-        <td><%= player.position_rank %></td>
+      <%= render partial: 'player', locals: { player: player } %>
     <% end %>
   </tbody>
 </table>

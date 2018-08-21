@@ -1,0 +1,27 @@
+<%= form_with model: player, id: "edit_player_#{player.id}", format: :js do |p| %>
+  <tr class="<%= player.drafted? ? 'drafted' : '' %>"
+      onclick="toggleDrafted(<%= player.drafted? %>, <%= player.id %>)"
+      id="player-<%= player.id %>-node">
+    <td><%= player.rank %>)</td>
+    <td><%= player.name %></td>
+    <td><%= player.position %></td>
+    <td><%= player.team %></td>
+    <td><%= player.position_rank %></td>
+  </tr>
+<% end %>
+
+<script>
+  function toggleDrafted(isDrafted, playerId) {
+    var form = document.getElementById(`edit_player_${playerId}`)
+
+    if(isDrafted) {
+      if(confirm("This player is marked as drafted, are you sure you want to mark them as undrafted?")) {
+        // form.submit() doesn't submit the way Rails would like for remote forms
+        form.dispatchEvent(new Event('submit', {bubbles: true}));
+      }
+    } else {
+      form.dispatchEvent(new Event('submit', {bubbles: true}));
+    }
+  }
+</script>
+
