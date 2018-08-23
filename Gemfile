@@ -62,3 +62,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "materialize-sass", "~> 0.100.2"
+
+gem "pry", "~> 0.11.3"
+
+gem "redis", "~> 4.0"
