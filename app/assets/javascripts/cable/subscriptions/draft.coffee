@@ -5,6 +5,7 @@ App.draftChannel = App.cable.subscriptions.create { channel: 'DraftChannel' },
     node = document.getElementById(nodeId).cloneNode(true)
     node.innerHTML = data['content']
     node.classList.toggle('drafted')
-    message = "#{if data['player']['drafted'] then 'Drafted' else 'Undrafted'} #{data['player']['name']} at #{new Date().toLocaleTimeString()}"
+    message = "#{data['player']['name']} #{if data['player']['drafted'] then 'drafted' else 'undrafted'} "
     console.log message
+    Materialize.toast(message, 4000)
     document.getElementById(nodeId).replaceWith(node)

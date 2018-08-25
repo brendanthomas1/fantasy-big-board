@@ -66,3 +66,5 @@ gem "materialize-sass", "~> 0.100.2"
 gem "pry", "~> 0.11.3"
 
 gem "redis", "~> 4.0"
+
+gem "jquery-rails", "~> 4.3"
